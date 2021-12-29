@@ -1,0 +1,32 @@
+
+{#{% extends "blogs/base.html" %}#}
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<title>{% block title %}SignUp to eCommerce Shop{% endblock %}</title>
+
+<div class="container">
+    {% bootstrap_messages %}
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-sm-10 offset-sm-1">
+            <div class="card my-5">
+                <div class="card-header text-center">
+                    Add products to shop
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% bootstrap_form formdata %}
+<!--                        {% for field in form %}-->
+<!--                        {% bootstrap_field field %}-->
+<!--                        {% endfor %}-->
+                    {#    {{ form.as_p }}#}
+                        <input type="submit" class="btn btn-success text-center w-100 mb-3" value="Sign Up">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

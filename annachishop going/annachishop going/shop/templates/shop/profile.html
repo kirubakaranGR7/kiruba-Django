@@ -1,0 +1,46 @@
+{% extends "shop/base.html" %}
+{% block title %}{{ title }}{% endblock  %}
+
+{% block content %}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<style>
+body{padding-top:10px;}
+
+.glyphicon {  margin-bottom: 5  0px;margin-right: 50px;}
+
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
+</style>
+{% for data in datas %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="{{data.image.url}}" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>{{data.name}}</h4>
+                        <i class="glyphicon glyphicon-map-marker"><cite title="San Francisco, USA">{{data.permanent_address}}
+                       </cite> </i>
+                            <br />
+                        <br />
+                        <p>{{data.email}}</p>
+                            <br />
+                        <p>{{data.mobile_number}}</p>
+                            <br />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{%endblock%}

@@ -1,0 +1,25 @@
+    {% extends "shop/base.html" %}
+{% block title %}Ecommerce Home Page{% endblock  %}
+{% load bootstrap4 %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-8">
+            {% for product in products %}
+          <img class="img-fluid" src="/media/{{ product.image }}" alt="">
+        </div>
+
+        <div class="col-md-4">
+          <h3 class="my-3">{{ product.name|title }}</h3>
+          <p>{{ product.description }}</p>
+          <h3 class="my-3">Product Details</h3>
+          <ul>
+            <li>Rs.{{product.price}} </li>
+            <li>{{product.shop}}</li>
+              {%endfor%}
+          </ul>
+
+        </div>
+</div>
+        <hr>
+
+{% endblock %}
